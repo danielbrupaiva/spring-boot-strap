@@ -5,3 +5,9 @@
 * IntelliJ IDEA Community Edition https://www.jetbrains.com/idea/
 * Java 21
 * Gradle Wrapper
+
+Useful commands:
+```bash
+./gradlew bootRun
+```
+
