@@ -3,11 +3,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: bootoolz-container      
+    container_name: bootoolz-container 
+    environment:
+      JAVA_OPTS: "-Xmx512m -Xms512m"   
+      GRADLE_OPTS: "-Xmx512m -Xms512m"   
     volumes:
       - ./:/workspace
     ports:
-      - "8080:8080"
+      - "80:80"
     restart: unless-stopped
     networks:
       - vps
