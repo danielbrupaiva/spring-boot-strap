@@ -23,13 +23,23 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    zeromqVersion = '0.5.2'
+}
+
 dependencies {
+    //Spring-Boot Framework
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.projectlombok:lombok'
+    //Tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    //Lombok
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    //ZMQ
+    implementation "org.zeromq:jeromq:${zeromqVersion}"
+    //gRPC
 }
 
 tasks.named('test') {
